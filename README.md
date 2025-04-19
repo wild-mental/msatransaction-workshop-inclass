@@ -31,15 +31,15 @@
     spring.jpa.open-in-view=false
     ###############################################
 
-
     consumer-service 
     producer-service 
+
+    bin/kafka-console-consumer.sh --topic mytopic2 --from-beginning --bootstrap-server localhost:9092
 
     email-service
     order-service
     stock-service
-
-
+    delivery-service
 
     order-service -> port: 8080
     payment-service -> port: 8081
