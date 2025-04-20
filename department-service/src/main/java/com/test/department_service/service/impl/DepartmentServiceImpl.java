@@ -3,6 +3,7 @@ package com.test.department_service.service.impl;
 import org.springframework.stereotype.Service;
 
 import com.test.department_service.entity.Department;
+import com.test.department_service.repository.DepartmentRepository;
 import com.test.department_service.service.DepartmentService;
 
 import lombok.AllArgsConstructor;
@@ -14,17 +15,16 @@ import lombok.extern.slf4j.Slf4j;
 public class DepartmentServiceImpl 
 implements DepartmentService
 {
+    private DepartmentRepository departmentRepository;
 
     @Override
     public Department saveDepartment(Department department) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'saveDepartment'");
+        return departmentRepository.save(department);
     }
 
     @Override
     public Department getDepartmentById(Long departmentId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getDepartmentById'");
+        return departmentRepository.findById(departmentId).get();
     }
 
 }
